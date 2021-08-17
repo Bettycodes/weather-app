@@ -1,0 +1,132 @@
+* {
+  padding: 5px;
+  font-family: Arial, sans-serif;
+}
+
+.weather-site-wrapper {
+  max-width: 1000px;
+  max-height: 425px;
+  margin: 20px auto;
+}
+.weather-site {
+  padding: 20px;
+  border: solid 2px #5d5c61;
+  border-radius: 10px;
+  background-image: url("../../src/images/forrest.jpg");
+  background-size: cover;
+}
+
+h1 {
+  padding: 15px 0 0 0;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 30px;
+  font-weight: 100px;
+  line-height: 28px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-weight: 16px;
+  height: 18px;
+  line-height: 19px;
+  text-transform: capitalize;
+}
+
+.button {
+  border: none;
+  background-color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+  padding: 8px;
+  transition: all 200ms ease;
+  cursor: pointer;
+  color: #ffd700;
+}
+
+.button:hover {
+  background-color: #41b2a3;
+}
+
+.forecast {
+  max-width: 1000px;
+  padding: 10px;
+  margin: 0 auto;
+  border: solid 2px #5d5c61;
+  border-radius: 10px;
+  background-color: #41b2a3;
+}
+
+.days {
+  padding: 0;
+  width: 13%;
+}
+
+.row {
+  padding: 5px;
+}
+
+.weatherForecast {
+  border: solid 2px #5d5c61;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  background-color: #85dcb8;
+  margin: 0px;
+  padding: 0px;
+}
+.forecastDate {
+  padding: 0px;
+}
+.forecastTemp {
+  padding: 0px;
+}
+
+.day:hover {
+  background-color: #40e0d0;
+}
+
+.weather-temp img {
+  margin-right: 100px;
+  height: 84px;
+  width: 84px;
+  position: relative;
+  top: -6px;
+}
+
+.weather-temp strong {
+  color: white;
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 200;
+  position: relative;
+  top: -75px;
+  left: 60px;
+}
+
+.weather-temp .units {
+  color: white;
+  position: relative;
+  font-size: 15px;
+  top: -95px;
+  left: 45px;
+}
+
+.fahrenheit {
+  text-decoration: none;
+  color: white;
+}
+
+.celsius {
+  text-decoration: none;
+  color: white;
+}
