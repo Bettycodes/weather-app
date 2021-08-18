@@ -22,6 +22,12 @@ function date() {
 
 date();
 
+function forecast(coordinates){
+  let apiKey = "049fb32dcd4a672d3fcbdb2a37413a71";
+  let apiLink = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiLink).then(showForecast);
+}
+
 function showWeather(response) {
   celsius = response.data.main.temp;
   let temperature = document.querySelector("#temperature");
@@ -40,9 +46,12 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+console.log(response.data)
+  forecast(response.data.coord);
 }
 
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data.daily);
   let forecast = document.querySelector("#forecast");
 
   let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -76,8 +85,8 @@ function showForecast() {
 
 function search(city) {
   let apiKey = "049fb32dcd4a672d3fcbdb2a37413a71";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
+  let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiLink).then(showWeather);
 }
 
 function submitButton(event) {
@@ -110,5 +119,5 @@ fahrenheitTemp.addEventListener("click", displayFahrenheit);
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", displayCelsius);
 
-search("Tigray");
-showForecast();
+search("mek'ele");
+
