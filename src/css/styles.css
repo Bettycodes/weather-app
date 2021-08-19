@@ -132,3 +132,14 @@ li {
 .wind{
   font-size: 17px;
 }
+
+.githubLink{
+  position: relative;
+  top: 10px;
+  color: white;
+}
+
+.githubLink a {
+  color: #e7c194;
+  font-weight: 1000px;
+}

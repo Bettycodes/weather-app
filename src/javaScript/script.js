@@ -125,5 +125,5 @@ form.addEventListener("submit", submitButton);
 
 
 
-search("mek'ele");
+search("Tigray");
 
