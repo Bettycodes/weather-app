@@ -12,6 +12,7 @@ body{
   max-height: 425px;
   margin: 20px auto;
 }
+
 .weather-site {
   padding: 20px;
   border: solid 2px #5d5c61;
@@ -92,9 +93,11 @@ li {
   margin: 0px;
   padding: 0px;
 }
+
 .forecastDate {
   padding: 0px;
 }
+
 .forecastTemp {
   padding: 0px;
 }
