@@ -28,6 +28,8 @@ function forecast(coordinates){
   axios.get(apiLink).then(showForecast);
 }
 
+
+
 function showWeather(response) {
   celsius = response.data.main.temp;
   let temperature = document.querySelector("#temperature");
@@ -50,32 +52,46 @@ console.log(response.data)
   forecast(response.data.coord);
 }
 
+
+function forecastDates(timestamp){
+let date = new Date(timestamp*1000);
+let day = date.getDay();
+let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+return days[day]
+};
+
+
 function showForecast(response) {
-  console.log(response.data.daily);
+ let forecastZerzer =response.data.daily;
+
+
   let forecast = document.querySelector("#forecast");
 
   let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecastZerzer.forEach(function (forecastDay, index) {
+    if(index < 7){
     forecastHTML =
       forecastHTML +
       `
       <div class="col days">
                   <div class="weatherForecast">
-                    <div class="forcastDate">${day}</div>
+                    <div class="forcastDate">${forecastDates(forecastDay.dt)}</div>
                     <img 
-                  src=" http://openweathermap.org/img/wn/10d@2x.png"
+                  src=" http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}.png"
                   alt=""
                   width="50"
                   />
                   <div class="forecastTemp">
-                  <span class="forcast max">16°</span>
-                  <span class="forcast max">10°</span>
+                  <span class="forcast max">${Math.round(forecastDay.temp.max)}</span>
+                  <span class="forcast max">${Math.round(forecastDay.temp.min)}</span>
                   </div>
                 </div>
               </div>
   `;
+  }
   });
 
   forecastHTML = forecastHTML + `</div>`;
