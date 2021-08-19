@@ -22,13 +22,27 @@ function date() {
 
 date();
 
+
+function searchLocation(position) {
+  let apiKey = "049fb32dcd4a672d3fcbdb2a37413a71";
+  let apiLink = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
+  axios.get(apiLink).then(showWeather);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let currentLocationButton = document.querySelector("#current");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
+
 function forecast(coordinates){
   let apiKey = "049fb32dcd4a672d3fcbdb2a37413a71";
   let apiLink = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiLink).then(showForecast);
 }
-
-
 
 function showWeather(response) {
   celsius = response.data.main.temp;

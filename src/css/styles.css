@@ -66,6 +66,10 @@ li {
   background-color: #57826f;
 }
 
+.fas{
+  padding:0px;
+}
+
 .forecast {
   max-width: 1000px;
   padding: 10px;
