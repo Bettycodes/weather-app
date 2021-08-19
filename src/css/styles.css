@@ -91,10 +91,6 @@ li {
   padding: 0px;
 }
 
-.day:hover {
-  background-color: #40e0d0;
-}
-
 .weather-temp img {
   margin-right: 100px;
   height: 84px;
@@ -117,32 +113,8 @@ li {
   color: white;
   position: relative;
   font-size: 15px;
-  top: -95px;
-  left: 45px;
-}
-
-
-.fahrenheit {
-  text-decoration: none;
-  color: white;
-}
-
-.fahrenheit:hover {
-  text-decoration: none;
-  color: #e7c194;
-  font-size: 20px;
-}
-
-
-.celsius {
-  text-decoration: none;
-  color: white;
-}
-
-.celsius:hover {
-  text-decoration: none;
-  color: #e7c194;
-  font-size: 20px;
+  top: -93px;
+  left: 52px;
 }
 
 .humidity{

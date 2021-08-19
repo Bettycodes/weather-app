@@ -68,8 +68,6 @@ function showForecast(response) {
 
   let forecast = document.querySelector("#forecast");
 
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
-
   let forecastHTML = `<div class="row">`;
   forecastZerzer.forEach(function (forecastDay, index) {
     if(index < 7){
@@ -111,12 +109,7 @@ function submitButton(event) {
   search(city.value);
 }
 
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  let fahrenheit = (celsius * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(fahrenheit);
-}
+
 
 function displayCelsius(event) {
   event.preventDefault();
@@ -129,11 +122,8 @@ let celsius = null;
 let form = document.querySelector("#form");
 form.addEventListener("submit", submitButton);
 
-let fahrenheitTemp = document.querySelector("#fahrenheit");
-fahrenheitTemp.addEventListener("click", displayFahrenheit);
 
-let celsiusTemp = document.querySelector("#celsius");
-celsiusTemp.addEventListener("click", displayCelsius);
+
 
 search("mek'ele");
 
