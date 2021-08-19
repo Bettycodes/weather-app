@@ -136,8 +136,5 @@ let celsius = null;
 let form = document.querySelector("#form");
 form.addEventListener("submit", submitButton);
 
-
-
-
 search("Tigray");
 
